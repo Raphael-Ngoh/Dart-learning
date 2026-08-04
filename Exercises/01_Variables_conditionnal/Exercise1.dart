@@ -1,6 +1,8 @@
 import 'Dart:io';
-/*Simple Calculator - Working on variables, operators and conditions*/
-
+/*Simple Calculator - Working on variables, operators and conditions
+You need to develop a command-line mini-calculator capable of
+performing an arithmetic operation selected by the user.
+*/
 
 void main(){
   print("Give number 1");
