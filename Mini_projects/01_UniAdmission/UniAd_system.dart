@@ -5,7 +5,7 @@ void main(List<String> args) {
 1. Name 2.Surname 3. Age 4.Gender 5.Nationality """);
   var name = stdin.readLineSync() ?? "candidate name" ;
   var surname = stdin.readLineSync()??"candidate surname" ;
-  var age = int.tryParse(stdin.readLineSync()??"1")??0 ;
+  var age = int.tryParse(stdin.readLineSync()??"")??0 ;
   var gender = stdin.readLineSync()??"M";
   var country = stdin.readLineSync()??"Cameroon";
   // Academic informations
@@ -24,15 +24,18 @@ Please give your administrative informations following the order :
   var idcard =  bool.tryParse(stdin.readLineSync()??"true")??false ;
   String decision;
 
-//Display 
+//Displaying candiate informations
   print("===================== Personnal Informations of the candidate =====================");
   print("""
 - Name : $name
 - Surname : $surname
-- Age : $age years old
+- Age : $age 
 - Gender = $gender
 - Nationality : $country
-      """);
+- Overall high school examination average : $exam_average / 20
+- High school track/stream : $track
+- Requested program  : $requested_program
+  """);
   print("===================== General criterias for admission =====================");
 
 // Automatically rejected
