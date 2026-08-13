@@ -1,12 +1,17 @@
 /* Mini Test corrector */
-void main(){
- var phrase = "   bonjour   tout LE monde bienvenue CHEZ dart   ";
- var phrase_trimed = phrase.trim();
- var phrase_splited = (phrase_trimed[0].toUpperCase()+phrase_trimed.substring(1, phrase_trimed.length).toLowerCase().replaceAll("dart", "Flutter")).split(" ");
- var finalized = "";
- for(var i in phrase_splited){
-  if(i.length > 0) finalized = finalized + " " +i;
- }
- print(finalized.trim());
+void main() {
+  var ph = "   bonjour   tout LE monde bienvenue CHEZ dart   ";
+  var phconcat = "";
+  String phtrimed;
+  String phfinal;
 
+  for (var i in ph.split(" ")) {
+    if (i.length > 0) {
+      phconcat += i + " ";
+    }
+  }
+
+  phtrimed = phconcat.trim();
+  phfinal = phtrimed[0].toUpperCase() + phtrimed.substring(1).toLowerCase();
+  print(phfinal.replaceAll("dart", "Flutter"));
 }
