@@ -75,35 +75,4 @@ _______________________________________________
       "_______________________________________________ \n- The password '$pass' is INVALID",
     );
   }
-
-  /* 
-var isUpper = false;
-var isLower = false;
-var digit = false;
- 
- if(pass.length >= 8){
-    print("Contains at least 8 characters : YES");
-  } else{
-    print("Contains at least 8 characters : NO");
-  }
-
-  for (int i =0;i<pass.length;i++){
-    if (int.tryParse(pass[i]) is! int ){ // Checking if the character is not a digit
-      if(pass[i] == pass[i].toUpperCase()){ // Comparing if the choosen character is uppercase
-        isUpper = true;
-      }
-      if (pass[i] == pass[i].toLowerCase()){
-        isLower = true;
-      }
-      if (pass[i] == "!" || pass[i] == "@" || pass[i] == "#" ){
-        isLower = true;
-      }
-      
-    } else {
-      digit = true;
-    }
-    
-    if(isUpper == true && isLower == true && digit == true) break;
-  }
-*/
 }
