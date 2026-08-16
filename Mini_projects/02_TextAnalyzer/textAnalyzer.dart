@@ -55,41 +55,8 @@ void main(List<String> args) {
     }
   }
 
-  print("""
   
-""");
-
-  //3. Searching a word and displaying it
-  /* var wordtosearch = "Writing";
-  var wordAppearence = 0;
-  var listofword_modified = listOfwords;
-  for (var i = 0; i < listofword_modified.length; i++) {
-    if (listofword_modified[i].contains(".")) {
-      listofword_modified[i] = listofword_modified[i].substring(
-        0,
-        listofword_modified[i].indexOf("."),
-      );
-    }
-  }
-  // Checking if the word exists
-  bool wordExist = text.contains(wordtosearch) ? true : false;
-
-  if (wordExist) {
-    // Number of appearences
-    for (var word in listofword_modified) {
-      if (word.toLowerCase() == wordtosearch.toLowerCase()) {
-        wordAppearence += 1;
-      }
-    }
-  }
-  print("Number of appearance of $wordtosearch : $wordAppearence");
-
-  //Position of his first occurence
-  print(
-    "First occurence position : $wordExist ${listOfwords.indexOf(wordtosearch.toLowerCase())}",
-  );*/
-
-  //4. Transformations :
+  //3. Transformations :
   var textReversed = listOfchars.reversed.join("");
   var listofcapital = listOfwords;
   for (var i = 0; i < listofcapital.length; i++) {
@@ -97,10 +64,32 @@ void main(List<String> args) {
         listofcapital[i][0].toUpperCase() + listofcapital[i].substring(1);
   }
 
+  //4. Searching a word and displaying it
+  bool wordExist;
+  var wordTosearch = "text".toLowerCase();
+  var numberOfoccurence = 0;
+  var textTolower = text.toLowerCase();
+
+  //Checking word existence
+  wordExist = textTolower.contains(wordTosearch) ? true : false;
+  
+  //Checking the number of occurences
+  if(wordExist){
+    for(var w in textTolower.split(" ")){
+      if (w == wordTosearch ) {
+        numberOfoccurence += 1;
+      } else if (w[w.length - 1] == ".") {
+        if (w.substring(0, w.length - 1) == wordTosearch){
+          numberOfoccurence += 1;
+        }
+      }
+    }
+  }
+
   print("""
 *****************************************************************************
 *                                                                           *
-*                           FINAL REPORT ABOUT TEXT ANALYZER                *
+*                         FINAL REPORT ABOUT TEXT ANALYZER                  *
 *                                                                           *
 *****************************************************************************
 """);
@@ -119,9 +108,13 @@ void main(List<String> args) {
   Number of vowela : $numberOfvowels
   Number of consonants : $numberOfconsons
 
+--------------------------------- Search ----------------------------------
+  Existence of [$wordTosearch] : $wordExist
+  Number of occurrence : $numberOfoccurence
+
 ----------------------------- Transformations ------------------------------
   Text in uppercase : ${text.toUpperCase()}
-  Text in lowercase : ${text.toLowerCase()}
+  Text in lowercase : $textTolower
   Text Reversed : $textReversed
   Text with words with uppercase letters : ${listofcapital.join(" ")}
 """);
