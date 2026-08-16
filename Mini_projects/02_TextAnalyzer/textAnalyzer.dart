@@ -55,7 +55,6 @@ void main(List<String> args) {
     }
   }
 
-  
   //3. Transformations :
   var textReversed = listOfchars.reversed.join("");
   var listofcapital = listOfwords;
@@ -72,14 +71,14 @@ void main(List<String> args) {
 
   //Checking word existence
   wordExist = textTolower.contains(wordTosearch) ? true : false;
-  
+
   //Checking the number of occurences
-  if(wordExist){
-    for(var w in textTolower.split(" ")){
-      if (w == wordTosearch ) {
+  if (wordExist) {
+    for (var w in textTolower.split(" ")) {
+      if (w == wordTosearch) {
         numberOfoccurence += 1;
       } else if (w[w.length - 1] == ".") {
-        if (w.substring(0, w.length - 1) == wordTosearch){
+        if (w.substring(0, w.length - 1) == wordTosearch) {
           numberOfoccurence += 1;
         }
       }
