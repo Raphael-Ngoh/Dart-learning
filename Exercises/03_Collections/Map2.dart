@@ -15,13 +15,15 @@ void main(List<String> args) {
   };
 
   //Displaying the list of products
-  inventory.forEach(((key, value) => print("- $key")));
+  print("---------- Products in the shop ----------");
+  inventory.forEach(((key, value) => print("- $key : $value Fcfa")));
+  print("------------------------------------------");
 
-  //Price of a specific product
-  var product = "Headset";
-  print("$product : ${inventory[product]}");
+  //Price of a specific product in our case : Headset
+  final product = "Headset";
+  print("$product Costs ${inventory[product]} Fcfa");
 
-  //Most expensive product
+  //Most expensive product and The cheapest product
   String expensive_product = "Mouse";
   String cheap_product = "Mouse";
   int expensive_price = inventory[expensive_product]!;
@@ -39,7 +41,7 @@ void main(List<String> args) {
   }
 
   print(
-    "The most xpensive product : $expensive_product \nThe Cheapest product : $cheap_product",
+    "The most expensive product : $expensive_product \nThe Cheapest product : $cheap_product",
   );
 
   //Total products
@@ -51,4 +53,10 @@ void main(List<String> args) {
     totalPrice += price;
   }
   print("The total price : $totalPrice");
+
+  //Adding new product and modifying the price of a product
+  inventory["Computer"] = 105000;
+  inventory["Webcam"] = 40000;
+  print("---------- Modified inventory ----------");
+  inventory.forEach(((key, value) => print("- $key : $value")));
 }
