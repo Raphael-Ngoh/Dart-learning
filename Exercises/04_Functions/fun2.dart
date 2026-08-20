@@ -29,7 +29,7 @@ bool isPrime(int number) {
 
   return isPositive(number) && counter == 2;
 }
-
+ 
 void main(List<String> args) {
   int value = 13;
   print("""========== Number analysis ===========
