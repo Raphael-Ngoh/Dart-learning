@@ -41,7 +41,7 @@ int calculateSum(List<int> list) {
   return total;
 }
 
-double average(List<int> list) => calculateSum(list) / list.length;
+double calculateAverage(List<int> list) => calculateSum(list) / list.length;
 
 int countEvenNumber(List<int> list) {
   var even = 0;
@@ -57,19 +57,18 @@ int countOddNumber(List<int> list) => list.length - countEvenNumber(list);
 
 int searchNumber(List<int> list, int number) => list.indexOf(number);
 
-int countNumberOcurrence(List<int> list, int number) {
+int countOcurrences(List<int> list, int number) {
   var occurence = 0;
-  if (list.contains(number)) {
     for (var i in list) {
       if (i == number) {
         occurence += 1;
       }
     } 
-  }
+  
   return occurence;
 }
 
-List<int> greaterNumbers(List<int> list, number) {
+List<int> findGreaterThan(List<int> list, number) {
   List<int> greater = [];
   for (var i in list) {
     if (i > number) {
@@ -85,11 +84,11 @@ void main(List<String> args) {
   print("""- Maximum : ${findMax(list)}
 - Minimum : ${findMin(list)}
 - Sum : ${calculateSum(list)}
-- Average : ${average(list)}
+- Average : ${calculateAverage(list)}
 - Total even numbers : ${countEvenNumber(list)}
 - Total odd numbers :${countOddNumber(list)} 
 - Searching $number : ${searchNumber(list, number)}
-- Total occurences : ${countNumberOcurrence(list, number)}
-- Greater number than $number : ${greaterNumbers(list, number)}
+- Total occurences : ${countOcurrences(list, number)}
+- Greater number than $number : ${findGreaterThan(list, number)}
 """);
 }
