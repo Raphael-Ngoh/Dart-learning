@@ -29,10 +29,9 @@ Create an account with **100,000 FCFA**, then:
 4. display the final balance. */
 
 bool isPositive(double value) => value > 0;
-bool isNotNull(value) => value != null;
 
 class BankAccount {
-  //Datas
+  //Attributes
   int accountNumber;
   String holderName;
   double balance;
@@ -47,7 +46,7 @@ class BankAccount {
   //Methods
   //deposit an amount
   void deposit(double amount) {
-    if (isPositive(amount) && isNotNull(amount)) {
+    if (isPositive(amount)) {
       balance += amount;
     } else {
       print("Please ! Give a valid value");
@@ -56,11 +55,11 @@ class BankAccount {
 
   //Remove an amount
   void withdraw(double amount) {
-    if (isPositive(amount) && isNotNull(amount)) {
+    if (isPositive(amount)) {
       if (balance >= amount) {
         balance -= amount;
       } else {
-        print("Balance is not suffisant for this withdrawal ($amount)!");
+        print("Balance is not suffiscient for this withdrawal ($amount)!");
       }
     } else {
       print("Please ! Give a valid value");
@@ -73,8 +72,8 @@ class BankAccount {
   }
 
   //Displaying holder's information
-  void displayInformation() {
-    print("============= Bank account Informations =============");
+  void displayAccountInformation() {
+    print("============= Bank account Information =============");
     print(
       "Account Number : $accountNumber \nAccount holder : $holderName\nBalance : $balance Fcfa",
     );
@@ -89,7 +88,7 @@ void main(List<String> args) {
     balance: 100000,
   );
   client.deposit(50000);
-  client.displayInformation();
+  client.displayAccountInformation();
   client.withdraw(30000);
   client.withdraw(200000);
   client.displayBalance();
